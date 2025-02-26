@@ -17,5 +17,9 @@
     "url": "https://github.com/Sujata1510/task/issues"
   },
   "homepage": "https://github.com/Sujata1510/task#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.1"
+  }
 }
