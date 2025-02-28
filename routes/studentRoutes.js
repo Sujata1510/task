@@ -1,13 +1,18 @@
 import express from "express";
+import { getAllStudents, loginStudent } from "../controllers/studentController.js";
+import { notAllowed } from "../utils/notAllowed.js";
 
 const router = express.Router();
 
-router.route("/api/students").get((req, res) => {
-  return res.status(200).json({
-    message: "welcome to backend"
-  })
-}).post();
+router.route("/").get(getAllStudents).post();
 
-router.route("/api/students/:id").get().patch().delete();
+
+
+router.route("/login").post(loginStudent).all(notAllowed);
+
+router.route("/register");
+
+
+
 
 export default router;

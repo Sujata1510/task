@@ -13,6 +13,7 @@ mongoose.connect('mongodb+srv://sujakutuwa2:Happysoul@cluster0.cxvs4.mongodb.net
 }).catch(() => {
   console.log('sth');
 })
+app.use(express.json());
 app.get("/", (req, res) => {
 
   return res.status(200).json({
@@ -59,7 +60,7 @@ app.get("/students", (req, res) => {
 
 // })
 
-app.use(studentRoutes)
+app.use("/api/students", studentRoutes)
 
 
 app.listen(5000, () => {
